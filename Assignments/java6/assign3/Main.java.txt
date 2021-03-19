@@ -1,0 +1,82 @@
+import java.util.Scanner;
+
+abstract class Employee{
+	private String employeeId;
+	private String employeeName;
+	private String department;
+	public abstract void calculateTax();
+	public void setEmployeeId(String employeeId) {
+		this.employeeId = employeeId;
+	}
+	public void setEmployeeName(String employeeName) {
+		this.employeeName = employeeName;
+	}
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+	public void getInfo(String status){
+		System.out.print(String.format("%-10s %-20s %-15s",status=="pe"?"P"+this.employeeId:"C"+this.employeeId,this.employeeName,this.department));
+	}
+}
+class PermanentEmployee extends Employee{
+	private double monthSalary;
+	private double pf;
+	private double tax;
+	public PermanentEmployee(String id, String name, String dept, String income){
+		setEmployeeId(id);
+		setEmployeeName(name);
+		setDepartment(dept);
+		this.monthSalary=Double.parseDouble(income);
+	}
+	public void calculateTax(){
+		this.pf=(this.monthSalary/100)*15;
+		this.tax=((this.monthSalary*12)/100)*10;
+	}
+	public void getData(){
+		getInfo("pe");
+		calculateTax();
+		System.out.println(String.format("%-15s %-15s %-15s",this.monthSalary,this.pf,this.tax));
+	}
+}
+class ContractEmployee extends Employee{
+	private int contractPeriod;
+	private double contractAmount;
+	private double tax;
+	public ContractEmployee(String id, String name, String dept, String cPeriod, String cAmount){
+		setEmployeeId(id);
+		setEmployeeName(name);
+		setDepartment(dept);
+		this.contractPeriod=Integer.parseInt(cPeriod);
+		this.contractAmount=Double.parseDouble(cAmount);
+	}
+	public void calculateTax(){
+		this.tax=((this.contractAmount/this.contractPeriod)/100)*10;
+	}
+	public void getData(){
+		getInfo("ce");
+		calculateTax();
+		System.out.println(String.format("%-15s %-15s %-15s",this.contractPeriod,this.contractAmount,this.tax));
+	}
+}
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String currentInput;
+		String[] cArr;
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the Employee details seperated by ',' even id for permanent and odd for contract employee");
+		currentInput=sc.nextLine();
+		cArr=currentInput.split(",");
+		if(Integer.parseInt(cArr[0])%2==0){
+			PermanentEmployee pe=new PermanentEmployee(cArr[0],cArr[1],cArr[2],cArr[3]);
+			pe.getData();
+		}
+		else
+		{
+			ContractEmployee ce=new ContractEmployee(cArr[0],cArr[1],cArr[2],cArr[3],cArr[4]);
+			ce.getData();
+		}
+	}
+
+}
