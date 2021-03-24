@@ -1,0 +1,26 @@
+[
+	{
+		"custId": "1",
+		"custName": "Karthik",
+		"city": "Warangal",
+		"pin": "506331"
+	},
+	{
+		"custId": "2",
+		"custName": "Jhon",
+		"city": "Chicago",
+		"pin": "123456"
+	},
+	{
+		"custId": "3",
+		"custName": "Smith",
+		"city": "USA",
+		"pin": "654321"
+	},
+	{
+		"custId": "4",
+		"custName": "Ching chang",
+		"city": "Wuhan",
+		"pin": "223344"
+	}
+]
