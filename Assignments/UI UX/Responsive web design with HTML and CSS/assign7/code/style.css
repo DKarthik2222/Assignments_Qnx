@@ -1,0 +1,24 @@
+body{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+}
+.box{
+    width: 20vw;
+    height: 20vw;
+    background-color: coral;
+    border-radius: 10%;
+    box-shadow: inset 0px 0px 50px rgb(128,128,128);
+}
+.box:hover{
+    animation: normal rotate 2s forwards;
+}
+@keyframes rotate{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(160deg) skew(10deg,10deg);
+    }
+}

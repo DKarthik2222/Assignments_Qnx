@@ -1,0 +1,18 @@
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.dataWrapper{
+    text-shadow: 10px 10px 10px pink;
+    box-shadow: inset 0px 0px 50px rgb(128,128,128);
+    padding: 10px;
+    width: 60vw;
+    height: 80vh;
+    background-image: url(../assets/img1.jpg), url(../assets/img2.jpg), url(../assets/img3.jpg);
+    background-repeat: no-repeat;
+    background-size: 50%, 50%, 50%;
+    background-position: top left, top right, bottom left;
+}

@@ -1,0 +1,48 @@
+body{
+    margin: 0;
+}
+.links{
+    text-decoration: none;
+    color: black;
+    margin: 10px;
+}
+header{
+    background-color: lightblue;
+    padding: 0 24px;
+    display: flex;
+    justify-content: center;
+}
+.headerNav{
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+    align-items: center;
+}
+.textWrapper > div{
+    width: 30vw;
+}
+h4:hover,h5:hover,p:hover{
+    color: red;
+    cursor: pointer;
+}
+.textWrapper{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+@media screen and (max-width: 900px){
+    .textWrapper{
+        flex-direction: column;
+    }
+    .textWrapper > div{
+        width: 60vw;
+    }
+}
+@media screen and (max-width: 640px){
+    .headerNav{
+        flex-direction: column;
+    }
+    .textWrapper > div{
+        width: 80vw;
+    }
+}

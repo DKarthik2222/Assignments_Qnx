@@ -1,0 +1,46 @@
+body{
+    margin: 0;
+}
+.links{
+    text-decoration: none;
+    color: black;
+    margin: 10px;
+}
+header{
+    background-color: lightblue;
+    padding: 0 24px;
+    display: flex;
+    justify-content: center;
+}
+.headerNav{
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+    align-items: center;
+}
+main{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+section{
+    width: 60%;
+    padding: 20px;
+}
+aside{
+    width: 25%;
+    color: red;
+    word-break: break-all;
+    padding: 20px;
+}
+footer{
+    background-color: lightblue;
+    text-align: center;
+    padding: 12px;
+    width: calc(100% - 24px);
+}
+@media screen and (max-width: 640px){
+    .headerNav{
+        flex-direction: column;
+    }
+}
