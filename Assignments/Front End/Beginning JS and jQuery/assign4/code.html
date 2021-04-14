@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#myForm').validate()
+            $('#myForm').css('background', 'linear-gradient(to right, lightblue, lightcoral)')
+            $('label').css('font-size','24px')
+        });
+    </script>
+    <style>
+        #myForm{
+            background: lightblue;
+            width: 34vw;
+            height: 30vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-radius: 10px;
+        }
+        #myForm > div{
+            margin-left: 10%;
+        }
+        input{
+            padding: 5px;
+            margin: 2px 0;
+            border: none;
+            outline: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <form id="myForm">
+        <div>
+                <label for="name">Full Name (Minimum 2 characters):</label><br>
+                <input type="text" name="name" minlength="2" id="name" required>
+        </div>
+        <div>
+                <label for="mail">E- Mail:</label><br>
+                <input type="email" name="mail" id="mail" required>
+        </div>
+    </form>
+</body>
+</html>
